@@ -1,3 +1,4 @@
+//実装した
 'use strict';
 const fs = require('fs');
 const fileName = './test.txt';
