@@ -8,19 +8,11 @@ function appendFilePromise(fileName, str) {
 	});
 }
 
-function main() {
-	let promiseChain = Promise.resolve();
-	for (let count = 0; count < 500; count++){
-		promiseChain = promiseChain
-		.then(() => {
-			return appendFilePromise(fileName, 'おはようございます\n')
-		})
-		.then(() => {
-			return appendFilePromise(fileName, 'こんにちは\n')
-		})
-		.then(() => {
-			return appendFilePromise(fileName, 'こんばんは\n')
-		});
+async function main() {
+	for (let count = 0; count < 500; count++) {
+		await appendFilePromise(fileName, "おはようございます\n");
+		await appendFilePromise(fileName, "こんにちは\n");
+		await appendFilePromise(fileName, "こんばんは\n");
 	}
 }
 
